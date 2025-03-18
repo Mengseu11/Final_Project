@@ -13,6 +13,7 @@ import AddtoCart from "./components/AddtoCart.jsx";
 import Women from "./pages/Women.jsx";
 import { Sidebar } from "lucide-react";
 import AboutUs from "./pages/AboutUs.jsx";
+import Payment from "./components/Payment.jsx";
 
 
 
@@ -52,6 +53,10 @@ const router = createBrowserRouter(
     {
       path:'/aboutus',
       element:<AboutUs/>
+    },
+    {
+      path:'/payment',
+      element:<Payment/>
     },
    
   ]

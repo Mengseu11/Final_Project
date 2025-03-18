@@ -75,7 +75,7 @@ export default function Sidebar  (){
     // },
     { 
       name: "", 
-      icon: <Menu size={20} color="grey"/>, 
+      icon: <Menu size={30} color="#2E4564"/>, 
       subMenu: [
         // { name: "Login", path: "/login", },
         { name: "Home", path: "/home" },
@@ -155,7 +155,7 @@ export default function Sidebar  (){
               </div>
              
               {item.subMenu && (
-                openDropdown === item.name ? <ChevronUp size={18} color="grey" /> : <ChevronDown size={18} color="grey"/>
+                openDropdown === item.name ? <ChevronUp size={30} color="#2E4564" /> : <ChevronDown size={30} color="#2E4564"/>
               )}
             </button>
             
@@ -163,7 +163,7 @@ export default function Sidebar  (){
             {/* Dropdown Menu for Items with Submenus */}
             {item.subMenu && openDropdown === item.name && (
               
-              <div className=" dark:bg-gray-800 rounded-lg ">
+              <div className=" dark:bg-slate-900 rounded-lg ">
                 {item.subMenu.map((subItem, subIndex) => (
                   <Link
                     key={subIndex}

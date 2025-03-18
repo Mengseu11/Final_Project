@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from "../features/cart/cartSlice"; // Import remove action
+import { removeFromCart } from "../features/cart/cartSlice";
 import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
@@ -43,7 +43,7 @@ export default function AddtoCart() {
               {/* Product Image */}
               <img
                 src={item.imageUrl} // Display the first image
-                alt={item.title}
+                // alt={item.title}
                 className="w-14 h-14 object-cover rounded"
               />
 
@@ -67,7 +67,9 @@ export default function AddtoCart() {
 
         {/* Checkout Button */}
         <button className="bg-blue-600 text-white w-full py-2 mt-4 rounded-md hover:bg-blue-700">
-          Proceed to Checkout
+          <Link to="/payment">
+            Proceed to Checkout
+          </Link>
         </button>
       </>
     )}

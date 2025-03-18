@@ -32,13 +32,13 @@ export default function Women() {
     <div className=" py-10">
       <AppNavbar />
       <div className="grid sm:grid-cols-6 md:grid-cols-4 lg:grid-cols-4 gap-4 px-32 py-5">
-        {currentCards.map((product, index) => (
+        {currentCards.map((products, index) => (
           <div key={index}>
             <Cards
-              id={product.id}
-              image={product.image}
-              title={product.title}
-              price={product.price}
+              id={products.id}
+              image={products.image}
+              title={products.title}
+              price={products.price}
             />
           </div>
           

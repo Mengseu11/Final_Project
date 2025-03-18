@@ -82,7 +82,7 @@ export default function AppNavbar() {
     <header className=" relative">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 ">
         <div className="flex h-16 items-center justify-around">
-          <div className="mb-11 gap-96">
+          <div className="mb-14 gap-96">
             <Sidebar />
           </div>
           <div className="hidden md:block">
@@ -105,7 +105,7 @@ export default function AppNavbar() {
               </ul>
             </nav>
           </div>
-          <h2 className="text-gray-700 text-4xl font-bold">WatchMe</h2>
+          <h2 className="text-indigo-950 text-4xl font-bold dark:text-slate-400 font-serif">WatchMe</h2>
 
           <div className="flex items-center gap-4">
             <Link
