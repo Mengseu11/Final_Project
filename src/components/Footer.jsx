@@ -22,7 +22,7 @@ export default function Footer() {
 <footer className="bg-white">
   <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-      <div>
+      <div className="mr-4">
         {/* <div className="flex justify-center text-teal-600 sm:justify-start">
           <svg className="h-8" viewBox="0 0 118 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -67,13 +67,13 @@ export default function Footer() {
             />
           </svg>
         </div> */}
-        <div className=" bg-[url(D:\Ecom\src\Image\image.png)] bg-cover  bg-no-repeat"></div>
-        <p className="mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left">
+        <img src="https://i.imgur.com/DRibeKq.png" alt="logo" />
+        <p className="mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left ml-7">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt consequuntur amet culpa
           cum itaque neque.
         </p>
 
-        <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
+        <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8 ml-7">
           <li>
             <a
               href="#"
