@@ -13,7 +13,7 @@ export default function Banner() {
   }, [location.pathname]);
   return (
     
-    <section className="relative bg-[url('https://imgur.com/a/eFE0dHD')] bg-cover  bg-no-repeat">
+    <section className="relative bg-[url('https://i.imgur.com/iqARzHY.jpeg')] bg-cover  bg-no-repeat">
       
       {showAlert && <Alert onClose={() => setShowAlert(false)} />}
       <AppNavbar/>
