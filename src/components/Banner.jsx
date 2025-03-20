@@ -13,7 +13,7 @@ export default function Banner() {
   }, [location.pathname]);
   return (
     
-    <section className="relative bg-[url('/images/banner.jpg')] bg-cover  bg-no-repeat">
+    <section className="relative bg-[url('https://photos.google.com/photo/AF1QipNvQfOlQz1RTToGqN4ILTsIJo0D7us2upvrzwoy')] bg-cover  bg-no-repeat">
       
       {showAlert && <Alert onClose={() => setShowAlert(false)} />}
       <AppNavbar/>
