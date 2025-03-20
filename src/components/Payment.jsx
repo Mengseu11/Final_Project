@@ -1,13 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCartQuantity } from "../features/cart/cartSlice";
 import { calculateTotal } from "../features/payment/paymentSlice";
+import Alert from "./Alert";
+import { Link, useLocation } from "react-router";
 
 export default function Payment() {
   const dispatch = useDispatch();
+  const location = useLocation();
   const cartItems = useSelector((state) => state.cart.items);
   const { subtotal, discount, deliveryFee, total } = useSelector((state) => state.payment);
+  const [showAlert, setShowAlert] = useState(false);
+  
 
   useEffect(() => {
     const newSubtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -21,6 +26,12 @@ export default function Payment() {
         quantityChange: type === "increase" ? 1 : -1, // Increase or decrease
       })
     );
+  };
+
+  const handleCheckout = () => {
+    if(location.pathname === "/home"){
+      setShowAlert(true)
+    }
   };
 
   return (
@@ -84,16 +95,22 @@ export default function Payment() {
         <p>Total</p>
         <p className="text-right ">${total.toFixed(2)}</p>
       </div>
-
+      
       {/* Buttons */}
       <div className="flex justify-between mt-6">
-        <a href="/men" className="px-6 py-3 bg-gray-500 rounded-lg text-white">
+        <Link to="/men" className="px-6 py-3 bg-gray-500 rounded-lg text-white">
           Back to Shop
-        </a>
-        <button className="px-6 py-3 bg-purple-600 text-white rounded-lg">
+        </Link>
+        <a href="/home"><button  onClick={handleCheckout} className="px-6 py-3 bg-purple-600 text-white rounded-lg">       
           Checkout
-        </button>
+          
+        </button></a>
+        
       </div>
+      
+      {/* {showAlert && <Alert onClose={() => setShowAlert(false)} />} */}
+      {/* Alert Component */}
+      
     </div>
   );
 }

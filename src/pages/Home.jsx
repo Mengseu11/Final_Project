@@ -4,8 +4,10 @@ import { ButtonIcon } from "../components/AppButton";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { Link } from "react-router";
+
 export default function Home() {
   // const dispatch = useDispatch();
+  
 
   // const { data, status, error } = useSelector((state) => state.movie);
 
@@ -24,7 +26,12 @@ export default function Home() {
 
   return (
     <main>
-          <Banner/>
+      
+      <div className="">
+        <Banner />
+
+      </div>
+      <Footer />
     </main>
   );
 }

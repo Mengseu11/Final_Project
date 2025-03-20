@@ -14,6 +14,7 @@ import Women from "./pages/Women.jsx";
 import { Sidebar } from "lucide-react";
 import AboutUs from "./pages/AboutUs.jsx";
 import Payment from "./components/Payment.jsx";
+import Alert from "./components/Alert.jsx";
 
 
 
@@ -57,6 +58,10 @@ const router = createBrowserRouter(
     {
       path:'/payment',
       element:<Payment/>
+    },
+    {
+      path:'/alert',
+      element:<Alert/>
     },
    
   ]
