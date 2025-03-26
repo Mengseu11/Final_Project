@@ -35,84 +35,63 @@ export default function Login() {
   });
 
   return (
-    <div
-      className="*:lg:grid lg:min-h-screen flex items-center justify-center transition-colors  text-gray-900"
-      
-    >
-      <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 shadow-lg bg-slate-200">
-        <div className="mb-8 text-center">
-          <h1 className="my-3 text-4xl font-bold">Sign in</h1>
-          <p className="text-sm">Sign in to access your account</p>
-        </div>
-
-        {/* Theme Toggle Button */}
-        
-
-        <form onSubmit={formik.handleSubmit} className="space-y-6">
-          <div className="space-y-4">
-            {/* Email Input */}
-            <div>
-              <label htmlFor="email" className="block mb-2 text-sm">
-                Email address
-              </label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                onChange={formik.handleChange}
-                value={formik.values.email}
-                placeholder="Enter your email"
-                className="w-full px-3 py-2 border rounded-md"
-              />
+  
+        <div className="flex items-center justify-center min-h-screen bg-white">
+          <div className="bg-slate-100 shadow-lg rounded-lg p-8 w-96">
+            <img src="https://i.imgur.com/DRibeKq.png" alt="" />
+            <h2 className="text-2xl font-serif text-center text-gray-900 mb-6 mt-3">Login/Register</h2>
+            
+            <form onSubmit={formik.handleSubmit} className="space-y-4">
+            
+              <div>
+                <label className="block text-gray-700">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  onChange={formik.handleChange}
+                  value={formik.values.email}
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  placeholder="Email"
+                />
+              </div>
               {formik.touched.email && formik.errors.email ? (
                 <div className="text-red-500">{formik.errors.email}</div>
               ) : null}
-            </div>
-
-            {/* Password Input */}
-            <div>
-              <label htmlFor="password" className="block mb-2 text-sm">
-                Password
-              </label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                onChange={formik.handleChange}
+    
+          
+              <div>
+                <label className="block text-gray-700">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  onChange={formik.handleChange}
                 value={formik.values.password}
-                placeholder="********"
-                className="w-full px-3 py-2 border rounded-md bg-current"
-              />
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  placeholder="Password"
+                />
+              </div>
               {formik.touched.password && formik.errors.password ? (
                 <div className="text-red-500">{formik.errors.password}</div>
               ) : null}
-            </div>
+  
+              <div className="flex items-center">
+                <input type="checkbox" className="mr-2 text-pink-500" />
+                <label className="text-gray-700">Remember me</label>
+              </div>
 
-            {/* Forgot Password Link */}
-            <div className="flex justify-end">
-              <a href="#" className="text-sm hover:underline">
-                Forgot password?
-              </a>
-            </div>
+              <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
+                LOGIN
+              </button>
+            </form>
+    
+       
+            <p className="mt-4 text-center text-gray-600">
+              Not a member? <a href="#" className="text-pink-500">Sign up now</a>
+            </p>
           </div>
+        </div>
+      );
+    }
+    
 
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full px-8 py-3 font-semibold rounded-md bg-purple-600 text-white hover:bg-purple-700 transition"
-          >
-            Sign in
-          </button>
-
-          {/* Sign Up Link */}
-          <p className="text-sm text-center">
-            Don't have an account yet?{" "}
-            <a href="#" className="hover:underline text-purple-600">
-              Sign up
-            </a>
-          </p>
-        </form>
-      </div>
-    </div>
-  );
-}

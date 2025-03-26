@@ -3,17 +3,17 @@ import AppNavbar from "../components/AppNavbar";
 import { useEffect, useState } from "react";
 import { fetchWomen } from "../features/women/womenAction";
 import Cards from "../components/Cards";
+import Footer from "../components/Footer";
 
 export default function Women() {
   const dispatch = useDispatch();
-    const data = useSelector((state) => state.women.data); // Ensure the state is correctly set
+    const data = useSelector((state) => state.women.data);
     console.log("Redux State Data:", data);
   
     useEffect(() => {
       dispatch(fetchWomen());
     }, [dispatch]);
-  
-    // Ensure data is an array before slicing
+ 
     const [currentPage, setCurrentPage] = useState(1);
     const cardsPerPage = 20;
     const startIndex = (currentPage - 1) * cardsPerPage;
@@ -22,8 +22,7 @@ export default function Women() {
     console.log("Start Index:", startIndex);
     console.log("End Index:", endIndex);
     console.log("Total Data Length:", data?.length);
-  
-    // Use optional chaining to prevent errors if `data` is undefined
+
     const currentCards = Array.isArray(data) ? data.slice(startIndex, endIndex) : [];
   
     console.log("Current Cards After Slicing:", currentCards);
@@ -65,6 +64,7 @@ export default function Women() {
           Next
         </button>
       </div>
+      <Footer/>
     </div>
   );
 }

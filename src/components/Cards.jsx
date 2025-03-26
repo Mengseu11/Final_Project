@@ -1,15 +1,14 @@
 import { useDispatch } from "react-redux";
-import { addToCart } from "../features/cart/cartSlice"; // Import addToCart action
+import { addToCart } from "../features/cart/cartSlice"; 
 
-export default function Cards({ id, price, title, description, images ,image}) {
+export default function Cards({ id, price, title, description, images ,image,}) {
   const dispatch = useDispatch();
-  const imageUrl = image || images?.[0]   || "https://via.placeholder.com/150" ; // Default image fallback
+  const imageUrl = image || images?.[0]   || "https://via.placeholder.com/150" ; 
+
   
   const handleAddToCart = (e) => {
-    e.preventDefault(); // Prevent default navigation behavior of <a> tag
+    e.preventDefault(); 
     dispatch(addToCart({ id, price, title, description, images,image ,imageUrl}));
-    // Optional: Show an alert or toast
-    // alert("Item added to cart!");
   };
 
   return (
@@ -22,7 +21,7 @@ export default function Cards({ id, price, title, description, images ,image}) {
 />
 
 
-      <div className="relative border-gray-300   dark:border-white dark:bg-transparent transition  p-6">
+      <div className="relative  transition  p-6">
         <h3 className=" text-lg font-bold line-clamp-1">{title}</h3>
         <p className="mt-1.5 text-sm text-gray-400">${price}</p>
 

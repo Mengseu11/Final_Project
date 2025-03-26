@@ -21,7 +21,7 @@ const cartSlice = createSlice({
       const { id, quantityChange,title } = action.payload;
       const item = state.items.find((item) => item.title === title);
       if (item) {
-        item.quantity = Math.max(1, item.quantity + quantityChange); // Prevent going below 1
+        item.quantity = Math.max(1, item.quantity + quantityChange); 
       }
     },
     removeFromCart: (state, action) => {

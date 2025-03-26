@@ -2,18 +2,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import AppNavbar from "../components/AppNavbar";
 import Cards from "../components/Cards";
-import { fetchMen } from "../features/men/menAction"; 
 import Footer from "../components/Footer";
+import { fetchShoes } from "../features/shoes/shoesAction";
 
-export default function Men() {
+export default function Shoes() {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.men.data);
+  const data = useSelector((state) => state.shoes.data); 
   console.log("Redux State Data:", data);
 
   useEffect(() => {
-    dispatch(fetchMen());
+    dispatch(fetchShoes());
   }, [dispatch]);
-
 
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 20;
@@ -23,6 +22,7 @@ export default function Men() {
   console.log("Start Index:", startIndex);
   console.log("End Index:", endIndex);
   console.log("Total Data Length:", data?.length);
+
 
   const currentCards = Array.isArray(data) ? data.slice(startIndex, endIndex) : [];
 
@@ -44,6 +44,7 @@ export default function Men() {
           </div>
         ))}
       </div>
+ 
       <div className="flex justify-center gap-4">
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}

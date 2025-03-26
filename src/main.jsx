@@ -14,23 +14,24 @@ import Women from "./pages/Women.jsx";
 import { Sidebar } from "lucide-react";
 import AboutUs from "./pages/AboutUs.jsx";
 import Payment from "./components/Payment.jsx";
-import Alert from "./components/Alert.jsx";
+import Shoes from "./pages/Shoes.jsx";
 
 
 
 const router = createBrowserRouter(
   [
     {
+      path: "/home",
+      element: <Home />
+    },
+    {
       path: '/',
       element: <MainLayout />,
       children: [
-        {
-          path: "/home",
-          element: <Home />
-        },
       ],
       errorElement: <Error/>
     },
+    
     {
       path: "/men",
       element: <Men/>
@@ -38,6 +39,10 @@ const router = createBrowserRouter(
     {
       path: "/women",
       element : <Women/>
+    },
+    {
+      path: "/shoes",
+      element : <Shoes/>
     },
     {
       path: "/cart",
@@ -59,10 +64,7 @@ const router = createBrowserRouter(
       path:'/payment',
       element:<Payment/>
     },
-    {
-      path:'/alert',
-      element:<Alert/>
-    },
+    
    
   ]
 )

@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   subtotal: 0,
   discount: 0,
-  deliveryFee:0, // Fixed delivery fee
+  deliveryFee:0, 
   total: 0,
 };
 

@@ -7,7 +7,6 @@ import AddtoCart from "./AddtoCart";
 import { NavLink } from "react-router";
 import Sidebar from "./Sidebar";
 
-// Avtar with dropdown menu
 const AvatarMenu = ({ avatar }) => {
   const dispatch = useDispatch();
   const [state, setState] = useState(false);
@@ -75,7 +74,7 @@ export default function AppNavbar() {
     { title: "Home", path: "/home" },
     { title: "Men", path: "/men" },
     { title: "Women", path: "/women" },
-    { title: "Kid", path: "/kid" },
+    { title: "Shoes", path: "/shoes" },
   ];
 
   return (
@@ -105,7 +104,7 @@ export default function AppNavbar() {
               </ul>
             </nav>
           </div>
-          <h2 className="text-indigo-950 text-4xl font-bold dark:text-slate-400 font-serif">WatchMe</h2>
+          <div className=" text-4xl font-bold font-serif">WatchMe</div>
 
           <div className="flex items-center gap-4">
             <Link
@@ -114,10 +113,10 @@ export default function AppNavbar() {
             >
               {theme === "light" ? "🌙" : "☀️"}
             </Link>
-            {/* Cart Icon */}
+
             <AddtoCart />
 
-            {/* Avatar and Login */}
+
             <div className="sm:flex sm:gap-4">
               {isAuthenticated ? (
                 <AvatarMenu avatar={profile && profile.avatar} />
@@ -131,7 +130,6 @@ export default function AppNavbar() {
             </div>
           
 
-            {/* Mobile Menu Button */}
             <div className="block md:hidden">
               <button className="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                 <svg

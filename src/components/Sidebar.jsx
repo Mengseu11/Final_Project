@@ -56,26 +56,15 @@ export default function Sidebar  (){
       }
     }, [isAuthenticated, accessToken]);
 
-  // Toggle user profile dropdown
-  // const toggleProfileDropdown = () => {
-  //   setIsProfileOpen(!isProfileOpen);
-  
-  // };
-
-  // Toggle menu dropdowns
   const toggleDropdown = (menu) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
 
   const menuItems = [
-    // { 
-    //   name: "Dashboard", icon: <Menu size={20} />, path: "/dashboard",
-    //   name: "Dashboard", icon: <Menu size={20} />, path: "/dashboard",
-      
-    // },
+ 
     { 
       name: "", 
-      icon: <Menu size={30} color="#2E4564"/>, 
+      icon: <Menu size={30} color="#475569"/>, 
       subMenu: [
         // { name: "Login", path: "/login", },
         { name: "Home", path: "/home" },
@@ -86,63 +75,13 @@ export default function Sidebar  (){
         
       ] 
     },
-    // { 
-    //   name: "Orders", 
-    //   icon: <ShoppingBag size={20} />, 
-    //   // subMenu: [
-    //   //   { name: "My Orders", path: "/orders/my" },
-    //   //   { name: "Order History", path: "/orders/history" },
-    //   // ] 
-    // },
-    // { name: "Wishlist", icon: <Heart size={20} />, path: "/wishlist" },
+
   ];
 
   return (
-    <div className="  bg-gray-900 text-white  flex flex-col">
-      {/* User Profile Dropdown */}
-      {/* <div className="relative">
-        <button
-          className="flex items-center justify-between w-full p-3 rounded-lg bg-gray-800 hover:bg-gray-700"
-          onClick={toggleProfileDropdown}
-        >
-          <div className="flex items-center gap-3">
-            <img
-              src="https://via.placeholder.com/40"
-              alt="User Avatar"
-              className="w-10 h-10 rounded-full"
-            />
-            <div>
-              <p className="font-semibold">Leroy Jenkins</p>
-              <p className="text-sm text-gray-400">View profile</p>
-            </div>
-          </div>
-          {isProfileOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-        </button>
+    <div className="  bg-gray-600 text-white  flex flex-col">
 
-        {isProfileOpen && (
-          <div className="absolute left-0 w-full mt-2 bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-            <Link
-              to="/profile"
-              className="flex items-center gap-3 p-3 hover:bg-gray-700"
-            >
-              <User size={18} /> Profile
-            </Link>
-            <Link
-              to="/settings"
-              className="flex items-center gap-3 p-3 hover:bg-gray-700"
-            >
-              <Settings size={18} /> Settings
-            </Link>
-            <button className="flex items-center gap-3 w-full text-left p-3 hover:bg-red-600">
-              <LogOut size={18} /> Logout
-            </button>
-          </div>
-        )}
-      </div> */}
-
-      {/* Sidebar Navigation with Dropdowns */}
       <nav className="flex flex-col  z-50 absolute" >
-        {/* <div className="sm:flex sm:gap-4"></div> */}
 
         {menuItems.map((item, index) => (
           <div key={index}>
@@ -155,20 +94,18 @@ export default function Sidebar  (){
               </div>
              
               {item.subMenu && (
-                openDropdown === item.name ? <ChevronUp size={30} color="#2E4564" /> : <ChevronDown size={30} color="#2E4564"/>
+                openDropdown === item.name ? <ChevronUp size={30} color="#475569" /> : <ChevronDown size={30} color="#475569"/>
               )}
             </button>
             
-
-            {/* Dropdown Menu for Items with Submenus */}
             {item.subMenu && openDropdown === item.name && (
               
-              <div className=" dark:bg-slate-900 rounded-lg ">
+              <div className=" dark:bg-slate-600 rounded-lg ">
                 {item.subMenu.map((subItem, subIndex) => (
                   <Link
                     key={subIndex}
                     to={subItem.path}
-                    className="block p-3 text-gray-300 hover:bg-slate-600"
+                    className="block p-3 text-gray-300 hover:bg-slate-800"
                   >
                     {subItem.name}
                   </Link>
