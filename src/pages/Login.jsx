@@ -44,14 +44,14 @@ export default function Login() {
             <form onSubmit={formik.handleSubmit} className="space-y-4">
             
               <div>
-                <label className="block text-gray-700">Email</label>
+                <label className="block text-slate-800 ">Email</label>
                 <input
                   type="email"
                   name="email"
                   id="email"
                   onChange={formik.handleChange}
                   value={formik.values.email}
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 bg-slate-600"
                   placeholder="Email"
                 />
               </div>
@@ -61,13 +61,13 @@ export default function Login() {
     
           
               <div>
-                <label className="block text-gray-700">Password</label>
+                <label className="block text-slate-800">Password</label>
                 <input
                   type="password"
                   name="password"
                   onChange={formik.handleChange}
                 value={formik.values.password}
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 bg-slate-600"
                   placeholder="Password"
                 />
               </div>
@@ -87,7 +87,7 @@ export default function Login() {
     
        
             <p className="mt-4 text-center text-gray-600">
-              Not a member? <a href="#" className="text-pink-500">Sign up now</a>
+              Not a member? <a href="#" className="text-blue-700">Sign up now</a>
             </p>
           </div>
         </div>
