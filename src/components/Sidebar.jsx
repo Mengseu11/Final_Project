@@ -70,7 +70,7 @@ export default function Sidebar  (){
         { name: "Home", path: "/home" },
         { name: "Men", path: "/men" },
         { name: "Wome", path: "/women" },
-        { name: "Kid", path: "/kid" },
+        { name: "Shoes", path: "/shoes" },
         { name: "AboutUs", path: "/aboutus" },
         
       ] 
