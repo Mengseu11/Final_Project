@@ -51,7 +51,7 @@ export default function Login() {
                   id="email"
                   onChange={formik.handleChange}
                   value={formik.values.email}
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 bg-slate-600"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 text-white bg-slate-600"
                   placeholder="Email"
                 />
               </div>
@@ -67,7 +67,7 @@ export default function Login() {
                   name="password"
                   onChange={formik.handleChange}
                 value={formik.values.password}
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 bg-slate-600"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none text-white focus:ring-2 bg-slate-600"
                   placeholder="Password"
                 />
               </div>
