@@ -17,24 +17,24 @@ const AvatarMenu = ({ avatar }) => {
   };
 
   return (
-    <div className="relative border-t lg:border-none">
+    <div className="relative border-t border-none">
       <div>
         <button
           ref={profileRef}
-          className="hidden w-10 h-10 outline-none rounded-full ring-offset-2 ring-gray-200 lg:focus:ring-2 lg:block"
+          className="  sm:w-10 sm:h-10 h-8 w-8  outline-none rounded-full ring-offset-2 ring-gray-200 sm:outline-none sm:rounded-full sm:ring-offset-2 sm:ring-gray-200 lg:focus:ring-2 sm:block "
           onClick={() => setState(!state)}
         >
-          <img src={avatar} className="w-full h-full rounded-full" />
+          <img src={avatar} className="w-full h-full rounded-full sm:w-full sm:h-full sm:rounded-full " />
         </button>
       </div>
       <ul
-        className={`right-0 lg:absolute lg:shadow-md lg:mt-0 ${
-          state ? "" : "lg:hidden"
+        className={`right-0 absolute shadow-md mt-0 sm:right-0 sm:absolute sm:shadow-md sm:mt-0${
+          state ? "" : "sm:hidden hidden"
         }`}
       >
         <button
           onClick={onLogout}
-          className="block w-full text-justify text-red-600 hover:text-gray-400 border-t py-3 lg:hover:bg-gray-50 lg:p-3 "
+          className=" w-full  sm:w-full  text-red-600 hover:text-gray-400 border-t py-3 lg:hover:bg-gray-50 lg:p-3  "
         >
           Logout
         </button>
@@ -46,7 +46,7 @@ const AvatarMenu = ({ avatar }) => {
 export default function AppNavbar() {
   const dispatch = useDispatch();
 
-  const count = useSelector((state) => state.cart.items.length); // Cart items count
+  const count = useSelector((state) => state.cart.items.length); 
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const profile = useSelector((state) => state.auth.profile);
   const accessToken = useSelector((state) => state.auth.accessToken);
@@ -78,10 +78,10 @@ export default function AppNavbar() {
   ];
 
   return (
-    <header className=" relative">
+    <header className="sticky top-0 left-0 w-full z-50 ">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 ">
-        <div className="flex h-16 items-center justify-around">
-          <div className="mb-14 gap-96">
+        <div className="flex h-16 items-center justify-between">
+          <div className="mb-14 gap-96 sm:gap-4">
             <Sidebar />
           </div>
           <div className="hidden md:block">
@@ -104,9 +104,10 @@ export default function AppNavbar() {
               </ul>
             </nav>
           </div>
-          <div className=" text-4xl font-bold font-serif">WatchMe</div>
+          <div className=" lg:text-4xl font-bold font-serif ">WatchMe</div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center lg:gap-4">
+          <AddtoCart/>
             <Link
               onClick={toggleTheme}
               className="relative inline-block rounded-full "
@@ -114,10 +115,10 @@ export default function AppNavbar() {
               {theme === "light" ? "🌙" : "☀️"}
             </Link>
 
-            <AddtoCart />
+            
 
 
-            <div className="sm:flex sm:gap-4">
+            <div className="sm:flex sm:gap-4 ">
               {isAuthenticated ? (
                 <AvatarMenu avatar={profile && profile.avatar} />
               ) : (
@@ -130,7 +131,7 @@ export default function AppNavbar() {
             </div>
           
 
-            <div className="block md:hidden">
+            {/* <div className="block md:hidden">
               <button className="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -147,7 +148,7 @@ export default function AppNavbar() {
                   />
                 </svg>
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

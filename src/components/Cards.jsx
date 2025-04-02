@@ -17,17 +17,17 @@ export default function Cards({ id, price, title, description, images ,image,}) 
       <img
   src={imageUrl}
   alt={title}
-  className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72 z-0"
+  className="lg:h-72 h-32 w-full object-contain transition duration-500 group-hover:scale-105 z-0"
 />
 
 
       <div className="relative  transition  p-6">
-        <h3 className=" text-lg font-bold line-clamp-1">{title}</h3>
+        <h3 className=" lg:text-lg font-bold line-clamp-1 text-xs">{title}</h3>
         <p className="mt-1.5 text-sm text-gray-400">${price}</p>
 
         <button
           onClick={handleAddToCart}
-          className="mt-1 block w-full rounded-sm bg-slate-600 p-4 text-sm font-medium text-white transition hover:scale-105"
+          className="mt-1 block w-full rounded-md bg-slate-600 p-4 lg:text-sm text-xs font-medium text-white transition hover:scale-105"
         >
           Add to Cart
         </button>

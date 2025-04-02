@@ -29,7 +29,7 @@ export default function AddtoCart() {
       </Link>
 
 {isOpen && (
-  <div className="absolute  w-80 bg-white shadow-lg rounded-lg border p-4 z-50">
+  <div className="absolute sm:w-72  w-32 bg-white shadow-lg rounded-lg border p-4 z-50 ">
 
     {cartItems.length === 0 ? (
       <p className="text-center text-gray-700">Your cart is empty.</p>
@@ -42,12 +42,12 @@ export default function AddtoCart() {
               <img
                 src={item.imageUrl} 
                 alt={item.title}
-                className="w-14 h-14 object-cover rounded"
+                className="sm:w-14 sm:h-14 h-8 w-8 object-contain rounded"
               />
 
               <div className="flex-1">
-                <h3 className="text-sm text-gray-500 font-semibold">{item.title}</h3>
-                <p className="text-gray-500 text-xs">${item.price}</p>
+                <h3 className="text-sm text-gray-500 font-semibold hidden sm:block">{item.title}</h3>
+                <p className="text-gray-500 text-xs hidden sm:block" >${item.price}</p>
                 <p className="text-gray-600 text-xs">Qty: {item.quantity}</p>
               </div>
 
@@ -63,9 +63,9 @@ export default function AddtoCart() {
         </ul>
 
 
-        <button className="bg-blue-600 text-white w-full py-2 mt-4 rounded-md hover:bg-blue-700">
+        <button className="bg-blue-600 text-white w-full sm:text-lg text-base py-2 mt-4 rounded-md hover:bg-blue-700">
           <Link to="/payment">
-            Proceed to Checkout
+            Checkout
           </Link>
         </button>
       </>

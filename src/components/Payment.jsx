@@ -45,9 +45,9 @@ export default function Payment() {
     <div className="max-w-3xl mx-auto p-8 bg-white shadow-lg rounded-lg">
       <h2 className="text-2xl font-bold text-center mb-6">My Shopping Cart</h2>
 
-      <div className="grid grid-cols-6 text-gray-600 font-medium pb-2 border-b">
-        <p className="col-span-3">Product</p>
-        <p>Quantity</p>
+      <div className="grid grid-cols-6   sm:grid-cols-6 text-gray-600 font-medium pb-2 border-b">
+        <p className="col-span-3 sm:col-span-3">Product</p>
+        <p className="col-span-2 sm:col-span-2">Quantity</p>
         <p>Price</p>
       </div>
 
@@ -64,14 +64,14 @@ export default function Payment() {
               className="w-12 h-12 rounded-md"
             />
             <div>
-              <p className="font-medium">{item.title}</p>
+              <p className="font-medium sm:text-lg text-xs">{item.title}</p>
               {/* <p className="text-xs text-gray-500">Product ID: {item.id}</p> */}
             </div>
           </div>
 
           <p>{item.size}</p>
 
-          <div className="flex items-center">
+          <div className="flex items-center col-span-2">
             <button
               onClick={() => handleQuantityChange(item.title, "decrease")}
               className="p-1 border rounded bg-gray-200"
@@ -86,13 +86,15 @@ export default function Payment() {
               <FaPlus />
             </button>
           </div>
-          <p>${item.price * item.quantity}</p>
+          <div className="flex justify-between">
+          ${item.price * item.quantity}
           <button
             onClick={() => handleRemoveFromCart(item.id)}
-            className="text-red-600 hover:text-red-800"
+            className="text-red-600 hover:text-red-800 "
           >
             <IoMdClose className="text-lg" />
           </button>
+          </div>
         </div>
       ))}
 
